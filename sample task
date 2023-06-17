@@ -1,0 +1,10 @@
+import csv
+
+with open('sample_dataset.csv', mode='w') as csv_file:
+    fieldnames = ['id', 'feature1', 'feature2', 'feature3', 'label']
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+    writer.writeheader()
+    writer.writerow({'id': 1, 'feature1': 0.8, 'feature2': 0.2, 'feature3': 0.5, 'label': 'positive'})
+    writer.writerow({'id': 2, 'feature1': 0.1, 'feature2': 0.5, 'feature3': 0.3, 'label': 'negative'})
+    writer.writerow({'id': 3, 'feature1': 0.5, 'feature2': 0.6, 'feature3': 0.7, 'label': 'positive'})
